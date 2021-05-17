@@ -37,9 +37,9 @@ Content-type: text/plain; charset=utf-8
 Pragma: no-cache
 Cache-Control: no-cache
 
-'''
+
 {"line":0,"wanType":-1,"net":0,"outType":1,"timeout":"0","lanIp":"192.168.0.1","lanMask":"255.255.255.0","adslUser":"","adslPwd":"","ssid":"Tenda_B38C40","wrlPassword":"DEFAULTPASSWORD","country":"US","power":"high","cloneType":"0","mac":"","deviceMac":"RETACTED","defMac":"RETACTED"}
-'''
+
 
 ## Acknowledgment
 
